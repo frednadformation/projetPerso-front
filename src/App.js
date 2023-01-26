@@ -7,6 +7,8 @@ import Register from './components/Register';
 import NotFound from './components/NotFound';
 import AllUsers from './components/AllUsers';
 import Profile from './components/Profile';
+import AddVoiture from './components/AddVoiture';
+import AllVoiture from './components/AllVoiture';
 
 
 
@@ -19,6 +21,9 @@ function App() {
         <Route path='/register' element={<Register/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/allUsers' element={<AllUsers/>} />
+        <Route path='/cars/addcars' element={<AddVoiture/>} />
+        <Route path='/cars/' element={<AllVoiture />} />
+        <Route path='/cars/' />
 
         <Route path='/*' element={<NotFound/>} />
       </Routes>
