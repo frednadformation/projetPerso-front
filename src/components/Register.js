@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Button, Icon } from 'semantic-ui-react'
+
 
 class Register extends Component {
 
@@ -19,6 +21,13 @@ class Register extends Component {
 
                     <input type="submit" value="Inscription" />
                 </form>
+
+                <Button animated='vertical'>
+                    <Button.Content hidden>Shop</Button.Content>
+                    <Button.Content visible>
+                        <Icon name='shop' />
+                    </Button.Content>
+                </Button>
             </div>
         )
     }
