@@ -1,7 +1,7 @@
 import React, {useReducer, useEffect} from 'react'
 import axios from 'axios'
 
-import { Card } from 'semantic-ui-react'
+import { Card, Image, Icon } from 'semantic-ui-react'
 
 
 function AllVoiture() {
@@ -62,12 +62,33 @@ function AllVoiture() {
             
             return(
                 <div key={index}>
-                 <Card
-                        href={['/',voiture._id]}
+                
+                 {/* <Card
+                        image={['//localhost:5000/' + voiture.img]}
+                        href={['/cars/'+voiture._id]}
                         header={voiture.modele}
                         meta={voiture.marque}
                         description={voiture.description}
-                    /> 
+                    />  */}
+                    <Card>
+                    {
+                        voiture.img.map((file)=>
+                            
+                             <Image src={`http://localhost:5000/${file.filename}`} />
+                        
+
+                        )
+                    }
+                        <Card.Content>
+                        <Card.Header>{voiture.modele}</Card.Header>
+                        <Card.Meta>
+                            <span className='date'>{voiture.marque}</span>
+                        </Card.Meta>
+                        <Card.Description>
+                            {voiture.description}
+                        </Card.Description>
+                        </Card.Content>
+                    </Card>
                 </div>
             )
 
